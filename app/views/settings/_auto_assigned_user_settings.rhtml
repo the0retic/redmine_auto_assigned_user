@@ -4,6 +4,7 @@
       selected = @settings['client_roles'].collect(&:to_i) unless @settings['client_roles'].blank?
       selected ||= []
     -%>
+<div class="splitcontentleft"
 <p>
 <%= content_tag(:label, l(:label_tracker_used_by_cto)) %><%=
       select_tag("settings[tracker_director]",
@@ -11,13 +12,17 @@
                  :multiple => false,
                  :size => 1)
     %>
+</p>
+</div>
+<div class="splitcontentright">
+<p>
 <%= content_tag(:label, l(:label_project_director_role)) %><%=
       select_tag("settings[project_director_role]",
                  content_tag(:option, '') + options_from_collection_for_select(roles, :id, :name, @settings['project_director_role'].to_i ),
                  :multiple => false,
                  :size => 1)
     %></p>
-
+</div>
 <p><%= content_tag(:label, l(:label_project_manager_role)) %><%=
       select_tag("settings[project_manager_role]",
                  content_tag(:option, '') + options_from_collection_for_select(roles, :id, :name, @settings['project_manager_role'].to_i ),
