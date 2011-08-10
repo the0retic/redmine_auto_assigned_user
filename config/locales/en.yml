@@ -3,3 +3,5 @@ en:
   my_label: "My label"
   label_project_manager_role: "Project manager role"
   label_client_roles: "Client roles"
+  label_project_director_role: "Poject director role"
+  label_tracker_used_by_cto: "Tracker type assigned to director"

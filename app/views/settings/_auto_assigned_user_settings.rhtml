@@ -1,8 +1,22 @@
-    <%-
+<%-
       roles = Role.all(:order => "position ASC")
+      trackers = Tracker.all()
       selected = @settings['client_roles'].collect(&:to_i) unless @settings['client_roles'].blank?
       selected ||= []
     -%>
+<p>
+<%= content_tag(:label, l(:label_tracker_used_by_cto)) %><%=
+      select_tag("settings[tracker_director]",
+                 content_tag(:option, '') + options_from_collection_for_select(trackers, :id, :name, @settings['tracker_director'].to_i ),
+                 :multiple => false,
+                 :size => 1)
+    %>
+<%= content_tag(:label, l(:label_project_director_role)) %><%=
+      select_tag("settings[project_director_role]",
+                 content_tag(:option, '') + options_from_collection_for_select(roles, :id, :name, @settings['project_director_role'].to_i ),
+                 :multiple => false,
+                 :size => 1)
+    %></p>
 
 <p><%= content_tag(:label, l(:label_project_manager_role)) %><%=
       select_tag("settings[project_manager_role]",
