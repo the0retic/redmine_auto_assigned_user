@@ -4,7 +4,7 @@
       selected = @settings['client_roles'].collect(&:to_i) unless @settings['client_roles'].blank?
       selected ||= []
     -%>
-<div class="splitcontentleft"
+<div class="splitcontentleft">
 <p>
 <%= content_tag(:label, l(:label_tracker_used_by_cto)) %><%=
       select_tag("settings[tracker_director]",
