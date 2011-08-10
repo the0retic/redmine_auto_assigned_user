@@ -1,0 +1,7 @@
+# Russian strings go here for Rails i18n
+ru:
+  my_label: "My label"
+  label_project_manager_role: "ПМ Роль"
+  label_client_roles: "Роли клиента"
+  label_project_director_role: "Роль технического специалиста"
+  label_tracker_used_by_cto: "Тип задач для технического специалиста"
